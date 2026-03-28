@@ -1,12 +1,18 @@
 SMART-AIRPORT-NAVIGATOR
 Smart Airport Navigator (A* Pathfinding)
 An intelligent, graph-based navigation system designed for large airports. This project uses the A* Search Algorithm to compute the most efficient walking routes between airport locations, considering real-world factors like stairs, distance, and accessibility.
+
+
+
 OVERVIEW
 Navigating large airports can be confusing and time-consuming. Traditional maps do not always provide optimized walking routes or consider accessibility needs.
 Smart Airport Navigator converts an airport layout into a state-space graph, where:
 Locations (like gates, lounges, counters) are nodes
 Paths between them are weighted edges
 Using a cost-sensitive approach, the system calculates the shortest and most efficient route between any two points (e.g., from entrance to boarding gate), while adjusting for real-world conditions such as stairs.
+
+
+
 AI CONCEPTS APPLIED
 Graph Theory
 Airport locations are represented as nodes, and walkways are edges with weights.
@@ -22,11 +28,17 @@ Cost Function Optimization
 Edge weights are dynamically adjusted:
 Flat paths → normal cost
 Stairs → 1.5× cost multiplier
+
+
+
 TECH STACK
 Language: Python 3.x
 Graph Library: NetworkX (for graph creation & A* algorithm)
 Visualization: Matplotlib (for map rendering)
 Math: Python math module (distance calculation)
+
+
+
 AIRPORT MAP NODES
 The system maps key airport locations including:
 Entry/Exit
@@ -46,6 +58,9 @@ Lounge
 Boarding Gates
 Boarding Gate A
 Gate B, C, D, E
+
+
+
 RESULTS
 The system generates a visual airport map where:
 Gray Nodes: Airport locations
@@ -55,6 +70,9 @@ Red Nodes: Selected path locations
 Blue Path: Optimal route calculated by A*
 Distance Calculation:
 Total weighted distance (in meters) is displayed in the window title.
+
+
+
 HOW TO RUN THE PROJECT
 Follow these steps to execute the navigator on your system:
 1. Prerequisites
@@ -77,12 +95,18 @@ A visualization window will appear showing:
 The airport layout
 Highlighted optimal path
 Total distance
+
+
+
 VISUALIZATION DETAILS
 Light Grey Nodes: All airport landmarks
 Red Nodes: Nodes in the selected path
 Black Edges: Standard flat paths
 Red Dashed Edges: Stairs (higher cost)
 Blue Line: Optimal route
+
+
+
 KEY FEATURES
 Realistic airport navigation model
 Supports accessibility-aware routing
