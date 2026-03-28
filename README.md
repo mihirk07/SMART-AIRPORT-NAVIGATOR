@@ -5,7 +5,7 @@ An intelligent, graph-based navigation system designed for large airports. This 
 
 
 
-OVERVIEW
+OVERVIEW:
 
 Navigating large airports can be confusing and time-consuming. Traditional maps do not always provide optimized walking routes or consider accessibility needs.
 Smart Airport Navigator converts an airport layout into a state-space graph, where:
@@ -15,7 +15,7 @@ Using a cost-sensitive approach, the system calculates the shortest and most eff
 
 
 
-AI CONCEPTS APPLIED
+AI CONCEPTS APPLIED:
 
 Graph Theory
 
@@ -36,7 +36,7 @@ Stairs → 1.5× cost multiplier
 
 
 
-TECH STACK
+TECH STACK:
 
 Language: Python 3.x
 
@@ -48,67 +48,67 @@ Math: Python math module (distance calculation)
 
 
 
-AIRPORT MAP NODES
+AIRPORT MAP NODES:
 
 The system maps key airport locations including:
 
-Entry/Exit
+-Entry/Exit
 
-Main Entrance
+-Main Entrance
 
-Exit Terminal
+-Exit Terminal
 
-Processing Area
+-Processing Area
 
-Ticketing Office
+-Ticketing Office
 
-Check-In Counter
+-Check-In Counter
 
-Security Check
+-Security Check
 
-Immigration
+-Immigration
 
-Facilities
+-Facilities
 
-Food Court
+-Food Court
 
-Duty Free Shop
+-Duty Free Shop
 
-Medical Room
+-Medical Room
 
-Information Desk
+-Information Desk
 
-Lounge
+-Lounge
 
-Boarding Gates
+-Boarding Gates
 
-Boarding Gate A
+-Boarding Gate A
 
-Gate B, C, D, E
+-Gate B, C, D, E
 
 
 
-RESULTS
+RESULTS:
 
 The system generates a visual airport map where:
 
-Gray Nodes: Airport locations
+-Gray Nodes: Airport locations
 
-Black Lines: Flat walking paths
+-Black Lines: Flat walking paths
 
-Red Dashed Lines: Stairs (higher cost paths)
+-Red Dashed Lines: Stairs (higher cost paths)
 
-Red Nodes: Selected path locations
+-Red Nodes: Selected path locations
 
-Blue Path: Optimal route calculated by A*
+-Blue Path: Optimal route calculated by A*
 
-Distance Calculation:
+-Distance Calculation:
 
-Total weighted distance (in meters) is displayed in the window title.
+-Total weighted distance (in meters) is displayed in the window title.
 
 
 
-HOW TO RUN THE PROJECT
+HOW TO RUN THE PROJECT:
 
 Follow these steps to execute the navigator on your system:
 
@@ -140,26 +140,28 @@ Total distance
 
 
 
-VISUALIZATION DETAILS
+VISUALIZATION DETAILS:
 
-Light Grey Nodes: All airport landmarks
+-Light Grey Nodes: All airport landmarks
 
-Red Nodes: Nodes in the selected path
+-Red Nodes: Nodes in the selected path
 
-Black Edges: Standard flat paths
+-Black Edges: Standard flat paths
 
-Red Dashed Edges: Stairs (higher cost)
+-Red Dashed Edges: Stairs (higher cost)
 
-Blue Line: Optimal route
+-Blue Line: Optimal route
 
 
 
-KEY FEATURES
+KEY FEATURES:
 
-Realistic airport navigation model
+-Realistic airport navigation model
 
-Supports accessibility-aware routing
+-Supports accessibility-aware routing
 
-Visual path representation
-Dynamic cost adjustment (stairs vs flat)
-Efficient A* pathfinding
+-Visual path representation
+
+-Dynamic cost adjustment (stairs vs flat)
+
+-Efficient A* pathfinding
