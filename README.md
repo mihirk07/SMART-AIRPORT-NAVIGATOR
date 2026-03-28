@@ -88,7 +88,7 @@ Prerequisites
 Ensure you have Python 3.7 or higher installed. You can check your version by running: python --version
 
 Clone the Repository
-Download the project files to your local system: git clone https://github.com/devesh18-design/Smart-Campus-Navigator cd smart-campus-navigator
+Download the project files to your local system: git clone https://github.com/mihirk07/SMART-AIRPORT-NAVIGATOR
 
 Install Required Libraries
 This project relies on NetworkX for graph logic and Matplotlib for the GUI. Install them via pip: pip install networkx matplotlib
