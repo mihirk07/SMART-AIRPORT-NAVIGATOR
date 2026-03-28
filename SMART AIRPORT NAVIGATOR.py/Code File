@@ -1,0 +1,105 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+import math
+
+# 1. Airport Landmarks 
+locations = {
+    'Main_Entrance': (10, 10),
+    'Exit_Terminal': (90, 10),
+
+    # Entrance & Processing Area
+    'Ticketing_Office': (25, 20),
+    'Check_In_Counter': (40, 30),
+    'Security_Check': (55, 40),
+    'Immigration': (70, 50),
+
+    # Central Area
+    'Food_Court': (50, 60),
+    'Duty_Free_Shop': (30, 65),
+    'Medical_Room': (60, 70),
+    'Information_Desk': (40, 80),
+
+    # Premium / Waiting Area
+    'Lounge': (65, 85),
+
+    # Gates Area 
+    'Boarding_Gate_A': (80, 95),
+    'Gate_B': (60, 95),
+    'Gate_C': (40, 95),
+    'Gate_D': (20, 90),
+    'Gate_E': (30, 95)
+}
+
+G = nx.Graph()
+for node, pos in locations.items():
+    G.add_node(node, pos=pos)
+
+# 2. Edges 
+paths = [
+    ('Main_Entrance', 'Check_In_Counter', 450, 'flat'),
+    ('Check_In_Counter', 'Duty_Free_Shop', 320, 'flat'),
+    ('Duty_Free_Shop', 'Information_Desk', 150, 'flat'),
+    ('Information_Desk','Medical_Room',75,'flat'),
+    ('Medical_Room','Lounge',150,'flat'),
+    ('Ticketing_Office','Food_Court',220,'flat'),
+    ('Check_In_Counter','Ticketing_Office',380,'flat'),
+    ('Food_Court','Boarding_Gate_A',650,'flat'),
+    ('Food_Court','Exit_Terminal',500,'flat'),
+    ('Ticketing_Office','Security_Check',85,'stairs'),
+    ('Immigration','Exit_Terminal',380,'flat'),
+    
+    ('Information_Desk', 'Gate_B', 60, 'stairs'),
+    ('Information_Desk', 'Gate_C', 70, 'flat'),
+    ('Information_Desk', 'Gate_D', 50, 'flat'),
+    ('Information_Desk', 'Gate_E', 80, 'stairs'),
+    
+    ('Gate_B', 'Gate_C', 40, 'flat'),
+    ('Gate_D', 'Duty_Free_Shop', 65, 'flat'),
+    
+    ('Immigration', 'Security_Check', 120, 'flat'),
+    ('Immigration', 'Food_Court', 90, 'flat'),
+    ('Security_Check', 'Food_Court', 110, 'stairs'),
+    ('Gate_E', 'Lounge', 200, 'flat'),
+    ('Lounge', 'Boarding_Gate_A', 80, 'flat'),
+    ('Ticketing_Office', 'Medical_Room', 420, 'flat'),
+    ('Lounge', 'Ticketing_Office', 130, 'flat')
+]
+
+for u, v, w, t in paths:
+    weight = w * 1.5 if t == 'stairs' else w
+    G.add_edge(u, v, weight=weight, type=t)
+
+# 3. A* Logic
+def heuristic_dist(u, v):
+    x1, y1 = locations[u]
+    x2, y2 = locations[v]
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+# Input
+start_point = input("Start_point:")
+end_point = input("End_point:")
+
+path = nx.astar_path(G, start_point, end_point, heuristic=heuristic_dist, weight='weight')
+path_length = nx.astar_path_length(G, start_point, end_point, heuristic=heuristic_dist, weight='weight')
+
+# 4. Visualization
+plt.figure(num="Smart AIRPORT Navigator by MIHIR KHANPARA",figsize=(12, 10))
+pos = nx.get_node_attributes(G, 'pos')
+
+nx.draw_networkx_nodes(G, pos, node_size=1200, node_color='lightgrey', label='Landmarks')
+nx.draw_networkx_labels(G, pos, font_size=8, font_weight='bold')
+
+flat_edges = [(u, v) for u, v, d in G.edges(data=True) if d['type'] == 'flat']
+stair_edges = [(u, v) for u, v, d in G.edges(data=True) if d['type'] == 'stairs']
+
+nx.draw_networkx_edges(G, pos, edgelist=flat_edges, alpha=0.3, edge_color='black', label='Flat Path')
+nx.draw_networkx_edges(G, pos, edgelist=stair_edges, alpha=0.5, edge_color='red', style='dashed', label='Stairs (1.5x Cost)')
+
+path_edges = list(zip(path, path[1:]))
+nx.draw_networkx_nodes(G, pos, nodelist=path, node_color='red', node_size=1500)
+nx.draw_networkx_edges(G, pos, edgelist=path_edges, edge_color='blue', width=4, label='Optimized Route')
+
+plt.title(f"A* Navigator: {start_point} to {end_point}\nDistance: {path_length:.2f}m", fontsize=15)
+plt.legend(scatterpoints=1, loc='best', fontsize=10)
+plt.axis('off')
+plt.show()
