@@ -96,7 +96,7 @@ This project relies on NetworkX for graph logic and Matplotlib for the GUI. Inst
 Execute the Script
 Run the main Python file to launch the visual navigator: https://github.com/mihirk07/SMART-AIRPORT-NAVIGATOR/blob/main/SMART%20AIRPORT%20NAVIGATOR.py/Code%20File
 
-Interacting with the OutputThe Map Window: A window titled "Smart University Campus Navigator by Devesh Katneshwarkar" will appear.
+Interacting with the OutputThe Map Window: A window titled "Smart airport navigator by mihir khanpara" will appear.
 
 Output Window A visualization window will appear showing: The airport layout Highlighted optimal path Total distance
 VISUALIZATION DETAILS:
