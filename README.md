@@ -94,7 +94,7 @@ Install Required Libraries
 This project relies on NetworkX for graph logic and Matplotlib for the GUI. Install them via pip: pip install networkx matplotlib
 
 Execute the Script
-Run the main Python file to launch the visual navigator: https://github.com/devesh18-design/Smart-Campus-Navigator/blob/main/Smart%20university%20navigator.py
+Run the main Python file to launch the visual navigator: https://github.com/mihirk07/SMART-AIRPORT-NAVIGATOR/blob/main/SMART%20AIRPORT%20NAVIGATOR.py/Code%20File
 
 Interacting with the OutputThe Map Window: A window titled "Smart University Campus Navigator by Devesh Katneshwarkar" will appear.
 
