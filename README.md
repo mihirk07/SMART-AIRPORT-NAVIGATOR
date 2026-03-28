@@ -5,6 +5,7 @@ An intelligent, graph-based navigation system designed for large airports. This 
 
 
 OVERVIEW
+
 Navigating large airports can be confusing and time-consuming. Traditional maps do not always provide optimized walking routes or consider accessibility needs.
 Smart Airport Navigator converts an airport layout into a state-space graph, where:
 Locations (like gates, lounges, counters) are nodes
@@ -14,6 +15,7 @@ Using a cost-sensitive approach, the system calculates the shortest and most eff
 
 
 AI CONCEPTS APPLIED
+
 Graph Theory
 Airport locations are represented as nodes, and walkways are edges with weights.
 Informed Search (A*) Algorithm
@@ -32,6 +34,7 @@ Stairs → 1.5× cost multiplier
 
 
 TECH STACK
+
 Language: Python 3.x
 Graph Library: NetworkX (for graph creation & A* algorithm)
 Visualization: Matplotlib (for map rendering)
@@ -40,6 +43,7 @@ Math: Python math module (distance calculation)
 
 
 AIRPORT MAP NODES
+
 The system maps key airport locations including:
 Entry/Exit
 Main Entrance
@@ -62,6 +66,7 @@ Gate B, C, D, E
 
 
 RESULTS
+
 The system generates a visual airport map where:
 Gray Nodes: Airport locations
 Black Lines: Flat walking paths
@@ -74,6 +79,7 @@ Total weighted distance (in meters) is displayed in the window title.
 
 
 HOW TO RUN THE PROJECT
+
 Follow these steps to execute the navigator on your system:
 1. Prerequisites
 Ensure Python 3.7 or higher is installed:
@@ -99,6 +105,7 @@ Total distance
 
 
 VISUALIZATION DETAILS
+
 Light Grey Nodes: All airport landmarks
 Red Nodes: Nodes in the selected path
 Black Edges: Standard flat paths
@@ -108,6 +115,7 @@ Blue Line: Optimal route
 
 
 KEY FEATURES
+
 Realistic airport navigation model
 Supports accessibility-aware routing
 Visual path representation
